@@ -95,7 +95,8 @@ export default class HomePage extends Vue {
           image: GO_IMG,
           info: "可能是我们心目中最好的导航站",
           items:
-            "一个结构很独特的门户网站\n项目使用Nuxt构建\n项目中搜索栏使用了自定义组件"
+            "一个结构很独特的门户网站\n项目使用Nuxt构建\n项目中搜索栏使用了自定义组件",
+          url: "http://go.neusoft.edu.cn/guest"
         },
         {
           title: "2020教职工晚会",
@@ -157,6 +158,7 @@ export default class HomePage extends Vue {
           title: "照片合成活动",
           image: PHOTOMAKE_IMG,
           items: "使用canvas给照片加边框(或者制作头像框。",
+          url: "http://shimmer.neusoft.edu.cn/card",
           news: [
             {
               title: "这才是我最想pick的大东软头像！",
@@ -174,8 +176,9 @@ export default class HomePage extends Vue {
         },
         {
           title: "DeMar大学生技术交流站",
-          image: null,
-          items: "一个以方便同学们寻找知己、一起学习交流和做实践项目的网站"
+          info: "一个以方便同学们寻找知己、一起学习交流和做实践项目的网站",
+          items:
+            "项目设计初期是为了给学校同学们个性化打造一款校园生活交流网站，同学们可以在这寻求组队，寻求学习上的帮助，交知心朋友，以博客的形式分享知识，以及报名参加社团和比赛。"
         }
       ]
     },
