@@ -84,6 +84,8 @@ export default class HomePage extends Vue {
   model = false;
   model2 = false;
 
+  lock = false;
+
   action = {};
 
   datas = [
@@ -207,10 +209,13 @@ export default class HomePage extends Vue {
   ];
 
   clickBtn(data: any) {
+    if (this.lock) return;
+    this.lock = true;
     this.action = data;
     this.model2 = true;
     setTimeout(() => {
       this.model = true;
+      this.lock = false;
     }, 0);
   }
 
@@ -219,9 +224,12 @@ export default class HomePage extends Vue {
   }
 
   closeModel() {
+    if (this.lock) return;
+    this.lock = true;
     this.model = false;
     setTimeout(() => {
       this.model2 = false;
+      this.lock = false;
     }, 800);
   }
 }
