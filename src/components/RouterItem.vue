@@ -41,7 +41,7 @@ export default class RouterItem extends Vue {
     opacity: 0;
   }
   100% {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 </style>

@@ -22,6 +22,9 @@ let camera;
 let pointLight;
 let controls;
 let mixer;
+const FPS = 30;
+let S = 0;
+let T = 1 / FPS;
 
 export default {
   name: "AboutPage",
@@ -48,6 +51,8 @@ export default {
     this.$refs.canvas.appendChild(renderer.domElement);
 
     scene = new THREE.Scene();
+
+    scene.background = "#ff00ff";
 
     camera = new THREE.PerspectiveCamera(
       40,
@@ -117,8 +122,12 @@ export default {
     animate() {
       requestAnimationFrame(this.animate);
       const delta = clock.getDelta();
+      S = S + delta;
       mixer.update(delta);
-      composer.render();
+      if (S > T) {
+        composer.render();
+        S = 0;
+      }
     }
   }
 };

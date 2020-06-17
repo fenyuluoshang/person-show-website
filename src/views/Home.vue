@@ -17,7 +17,41 @@
             :key="index2"
             :title="item2.title"
             :img="item2.image?item2.image+RESIZE:null"
+            @click="clickBtn(item2)"
           />
+        </div>
+      </div>
+    </div>
+    <div v-show="model2" class="model">
+      <div @click="closeModel" :class="{model_back:true,show:model}"></div>
+      <div @click="stopEvent" :class="{__inner:true,show:model}">
+        <div class="__body">
+          <h3>{{action.title}}</h3>
+          <div class="urls">
+            <a v-if="action.github" target="_blank" :href="action.github">GitHub</a>
+            <a v-if="action.url" target="_blank" :href="action.url">访问</a>
+          </div>
+          <div v-if="action.info" class="info">"&nbsp;{{action.info}}&nbsp;"</div>
+          <div v-if="action.items" class="item">{{action.items}}</div>
+          <template v-if="action.news">
+            <h4>相关新闻及微信推送</h4>
+            <a
+              class="news"
+              v-for="(item,index) in action.news"
+              :key="index"
+              target="_blank"
+              :href="item.href"
+            >
+              <div class="__news_inner">
+                <div class="title">《{{item.title}}》</div>
+                <div class="from">——{{item.from}}</div>
+              </div>
+            </a>
+          </template>
+          <div v-if="action.image" class="image">
+            <h4>页面截图</h4>
+            <img :src="action.image" />
+          </div>
         </div>
       </div>
     </div>
@@ -46,14 +80,29 @@ const RESIZE = "?x-oss-process=image/resize,w_300,limit_0";
 })
 export default class HomePage extends Vue {
   RESIZE = "?x-oss-process=image/resize,w_300,limit_0";
-  GO_IMG = GO_IMG + RESIZE;
-  Admin_IMG = Admin_IMG + RESIZE;
-  PARTY2019 = PARTY2019 + RESIZE;
-  DBMT_IMG = DBMT_IMG + RESIZE;
-  NEUSOFT_IMG = NEUSOFT_IMG + RESIZE;
-  VISIT_IMG = VISIT_IMG + RESIZE;
-  PHOTOMAKE_IMG = PHOTOMAKE_IMG + RESIZE;
-  WISH_IMG = WISH_IMG + RESIZE;
+
+  model = false;
+  model2 = false;
+
+  action = {
+    title: "大连东软信息学院官网",
+    image: NEUSOFT_IMG,
+    info: "有幸在学校官网上留下了自己的脚印",
+    items: "和老师、社团同学一起维护着学校的官方网站，并在上面加了一些活动。",
+    url: "http://www.neusoft.edu.cn",
+    news: [
+      {
+        title: "大东软新版官网上线！颜值更高，体验更酷，等你猛戳！",
+        href: "https://mp.weixin.qq.com/s/vLsMUstn8VTnypbjRsbdBg",
+        from: "大连东软信息学院微信公众号"
+      },
+      {
+        title: "今天，大东软官网想听你心里话",
+        href: "https://mp.weixin.qq.com/s/X3eIvZWgK_nEZ3vS6GbKKA",
+        from: "大连东软信息学院微信公众号"
+      }
+    ]
+  };
 
   datas = [
     {
@@ -74,7 +123,8 @@ export default class HomePage extends Vue {
             {
               title:
                 "不忘初心，携手同行！我们以这样一场联欢会，共迎大东软2020新精彩！",
-              href: "https://mp.weixin.qq.com/s/lusgOZk7AFFCTL1WwfK3Rw"
+              href: "https://mp.weixin.qq.com/s/lusgOZk7AFFCTL1WwfK3Rw",
+              from: "大连东软信息学院微信公众号"
             }
           ]
         },
@@ -86,19 +136,34 @@ export default class HomePage extends Vue {
         {
           title: "大连东软信息学院官网",
           image: NEUSOFT_IMG,
-          items: "有幸在学校官网上留下了自己的脚印",
-          url: "http://www.neusoft.edu.cn"
+          info: "有幸在学校官网上留下了自己的脚印",
+          items:
+            "和老师、社团同学一起维护着学校的官方网站，并在上面加了一些活动。",
+          url: "http://www.neusoft.edu.cn",
+          news: [
+            {
+              title: "大东软新版官网上线！颜值更高，体验更酷，等你猛戳！",
+              href: "https://mp.weixin.qq.com/s/vLsMUstn8VTnypbjRsbdBg",
+              from: "大连东软信息学院微信公众号"
+            },
+            {
+              title: "今天，大东软官网想听你心里话",
+              href: "https://mp.weixin.qq.com/s/X3eIvZWgK_nEZ3vS6GbKKA",
+              from: "大连东软信息学院微信公众号"
+            }
+          ]
         },
         {
           title: "送祝福活动",
           image: WISH_IMG,
           items:
-            "用在了2020年教职工晚会和20周年校庆\n实现了一套不会互相遮挡的弹幕控制器",
+            "在2020年教职工晚会和20周年校庆上的互动小活动\n收集祝福语并以弹幕同屏的形式展示\n实现了一套不会互相遮挡的弹幕控制器",
           news: [
             {
               title: "原来你一直牵念的人是我",
               href:
-                "https://mp.weixin.qq.com/s?__biz=MzA4MDA1MTExMQ==&mid=2656733984&idx=1&sn=f0e318e3f280881833984f052ab8f4bf&chksm=840405e8b3738cfeb4eaf995c3e0664e90160b332c1142d2253f0a3423945ff5243b67d43cd2"
+                "https://mp.weixin.qq.com/s?__biz=MzA4MDA1MTExMQ==&mid=2656733984&idx=1&sn=f0e318e3f280881833984f052ab8f4bf&chksm=840405e8b3738cfeb4eaf995c3e0664e90160b332c1142d2253f0a3423945ff5243b67d43cd2",
+              from: "大连东软信息学院微信公众号"
             }
           ]
         },
@@ -109,7 +174,8 @@ export default class HomePage extends Vue {
           news: [
             {
               title: "这才是我最想pick的大东软头像！",
-              href: "https://mp.weixin.qq.com/s/3gBtWFdGWbMU7y-rIIeFUA"
+              href: "https://mp.weixin.qq.com/s/3gBtWFdGWbMU7y-rIIeFUA",
+              from: "大连东软信息学院微信公众号"
             }
           ]
         },
@@ -132,15 +198,41 @@ export default class HomePage extends Vue {
           title: "大连冰山科技官网",
           image: DBMT_IMG,
           items:
-            "一个结构很独特的门户网站\n项目使用Nuxt构建\n项目中搜索栏使用了自定义组件"
+            "一个ts+ejs构建的网站\n使用了比较现代化、定制化的页面设计和webpack打包",
+          url: "http://www.dbmt.com.cn"
         }
       ]
     },
     {
       title: "小玩具",
-      list: []
+      list: [
+        {
+          title: "shimmer-joi",
+          items: "基于 @hapi/joi 更好的 typescript 类型引导",
+          github: "https://github.com/NeuShimmer/joi"
+        }
+      ]
     }
   ];
+
+  clickBtn(data: any) {
+    this.action = data;
+    this.model2 = true;
+    setTimeout(() => {
+      this.model = true;
+    }, 0);
+  }
+
+  stopEvent(event: Event) {
+    event.stopPropagation();
+  }
+
+  closeModel() {
+    this.model = false;
+    setTimeout(() => {
+      this.model2 = false;
+    }, 800);
+  }
 }
 </script>
 
@@ -162,6 +254,96 @@ a {
   margin: 20px 2%;
   @media (max-width: $xs-sm-width) {
     width: 96%;
+  }
+}
+
+.model {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.model_back {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #262626, $alpha: 0.7);
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.315, 0.605, 0.375, 0.925);
+  &.show {
+    opacity: 1;
+  }
+}
+
+.__inner {
+  z-index: 1024;
+  height: 100vh;
+  width: 40vw;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  overflow: hidden;
+  background-color: rgba($color: #262626, $alpha: 0.8);
+  color: #bbb;
+  transform: translateX(100%);
+  transition: transform 0.8s cubic-bezier(0.315, 0.605, 0.375, 0.925);
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  h3,
+  h4,
+  h5 {
+    color: #ddd;
+  }
+}
+.__body {
+  height: 100%;
+  overflow: auto;
+  .image {
+    width: 100%;
+    > img {
+      width: 100%;
+    }
+  }
+  .urls {
+    margin: 10px 0;
+    font-size: 14px;
+
+    color: #c9d6df;
+    > a {
+      margin-left: 15px;
+    }
+    :nth-child(1) {
+      margin-left: 0;
+    }
+  }
+  .news {
+    text-decoration: none;
+    .__news_inner {
+      margin-top: 10px;
+      box-sizing: border-box;
+      padding: 8px 10px;
+      background-color: #000;
+      color: #999;
+    }
+    .title {
+      font-size: 15px;
+    }
+    .from {
+      text-align: right;
+      font-size: 14px;
+    }
+  }
+  .info {
+    font-size: 14px;
+    font-style: italic;
   }
 }
 </style>

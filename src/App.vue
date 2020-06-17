@@ -119,6 +119,6 @@ body {
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
-  background: rgba($color: #35d1f8, $alpha: 0.3);
+  background: rgba($color: #fff, $alpha: 0.2);
 }
 </style>
