@@ -65,7 +65,7 @@ body {
 }
 
 .page {
-  background-color: rgba($color: #000000, $alpha: 0.1);
+  background-color: rgba($color: #000000, $alpha: 0.3);
   color: mix(#000000, #ffffff, 0.3);
   animation-name: show-in;
   animation-duration: 0.5s;
