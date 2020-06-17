@@ -58,6 +58,10 @@ body {
   height: 100%;
   box-sizing: border-box;
   padding: 5% 10%;
+  @import "@/value.scss";
+  @media (max-width: $xs-sm-width) {
+    padding: 0;
+  }
 }
 
 .page {
