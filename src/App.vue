@@ -62,21 +62,25 @@ body {
 
 .page {
   background-color: rgba($color: #000000, $alpha: 0.1);
-  color: mix(#000000, #ffffff, 0.12);
+  color: mix(#000000, #ffffff, 0.3);
   animation-name: show-in;
   animation-duration: 0.5s;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.page-box {
+  box-sizing: border-box;
+  max-height: 100%;
+  overflow: auto;
+  padding: 3% 5%;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.col-md-3 {
-  width: 25%;
 }
 
 @keyframes show-in {
@@ -98,5 +102,23 @@ body {
   100% {
     transform: perspective(1600px) rotateX(0) rotateY(0) translateZ(65px);
   }
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: rgba($color: #35d1f8, $alpha: 0.3);
 }
 </style>

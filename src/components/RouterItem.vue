@@ -1,5 +1,5 @@
 <template>
-  <router-link class="router-item-a" :to="to">
+  <a class="router-item-a" @click="click">
     <div @mouseenter="image_show=true" class="router-item">
       <span>{{title}}</span>
       <div class="item-bg"></div>
@@ -7,7 +7,7 @@
         <img :src="image_src" />
       </div>
     </div>
-  </router-link>
+  </a>
 </template>
 
 <script lang="ts">
@@ -15,12 +15,6 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class RouterItem extends Vue {
-  @Prop({
-    required: true,
-    type: String
-  })
-  to?: string;
-
   @Prop()
   img?: string;
 
@@ -31,6 +25,10 @@ export default class RouterItem extends Vue {
 
   get image_src() {
     return this.image_show ? this.img : "";
+  }
+
+  click(e: Event) {
+    this.$emit("click", e);
   }
 }
 </script>
@@ -48,9 +46,11 @@ export default class RouterItem extends Vue {
 }
 </style>
 <style lang="scss" scoped>
+@import "@/value.scss";
 .router-item-a {
   text-decoration: none;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .router-item {
   position: relative;
@@ -98,7 +98,12 @@ export default class RouterItem extends Vue {
   display: none;
   width: 300px;
   max-width: 50%;
+  max-height: 350%;
+  overflow: hidden;
   transition: all 0.5s;
+  @media (max-width: $xs-sm-width) {
+    max-width: 100%;
+  }
   img {
     width: 100%;
   }

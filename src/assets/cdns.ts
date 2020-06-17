@@ -15,3 +15,7 @@ export const NEUSOFT_IMG = process.env.NODE_ENV === "development" ? require("./n
 export const TOPPORS_IMG = process.env.NODE_ENV === "development" ? require("./toppros-cn.png") : "https://fenyu-media.oss-cn-beijing.aliyuncs.com/lab/image/toppros-cn.png"
 
 export const VISIT_IMG = process.env.NODE_ENV === "development" ? require("./visit.png") : "https://fenyu-media.oss-cn-beijing.aliyuncs.com/lab/image/visit.png"
+
+export const PHOTOMAKE_IMG = process.env.NODE_ENV === "development" ? require("./photo_make.jpg") : "https://fenyu-media.oss-cn-beijing.aliyuncs.com/lab/image/photo_make.jpg"
+
+export const WISH_IMG = process.env.NODE_ENV === "development" ? require("./2020wish.png") : "https://fenyu-media.oss-cn-beijing.aliyuncs.com/lab/image/2020wish.png"
