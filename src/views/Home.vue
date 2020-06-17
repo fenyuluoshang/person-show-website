@@ -84,25 +84,7 @@ export default class HomePage extends Vue {
   model = false;
   model2 = false;
 
-  action = {
-    title: "大连东软信息学院官网",
-    image: NEUSOFT_IMG,
-    info: "有幸在学校官网上留下了自己的脚印",
-    items: "和老师、社团同学一起维护着学校的官方网站，并在上面加了一些活动。",
-    url: "http://www.neusoft.edu.cn",
-    news: [
-      {
-        title: "大东软新版官网上线！颜值更高，体验更酷，等你猛戳！",
-        href: "https://mp.weixin.qq.com/s/vLsMUstn8VTnypbjRsbdBg",
-        from: "大连东软信息学院微信公众号"
-      },
-      {
-        title: "今天，大东软官网想听你心里话",
-        href: "https://mp.weixin.qq.com/s/X3eIvZWgK_nEZ3vS6GbKKA",
-        from: "大连东软信息学院微信公众号"
-      }
-    ]
-  };
+  action = {};
 
   datas = [
     {
@@ -111,14 +93,16 @@ export default class HomePage extends Vue {
         {
           title: "Go!校园综合门户",
           image: GO_IMG,
+          info: "可能是我们心目中最好的导航站",
           items:
             "一个结构很独特的门户网站\n项目使用Nuxt构建\n项目中搜索栏使用了自定义组件"
         },
         {
           title: "2020教职工晚会",
           image: PARTY2019,
+          info: "这是一次很棒的团队管理尝试",
           items:
-            "2020年和工作室成员一起负责了教职工晚会\n这是一次很棒的团队管理尝试",
+            "作为队长和工作室成员一起负责了教职工晚会\n包括线上活动策划，指导开发，任务分配\n活动中心升级维护，抽奖接口维护。",
           news: [
             {
               title:
@@ -131,7 +115,8 @@ export default class HomePage extends Vue {
         {
           title: "参观预约小程序",
           image: VISIT_IMG,
-          items: "一个简洁大方的微信预约和抢票小程序"
+          info: "一个简洁大方的微信预约和抢票小程序",
+          items: "为了学校对外开放、预约参观活动的需要"
         },
         {
           title: "大连东软信息学院官网",
@@ -156,8 +141,9 @@ export default class HomePage extends Vue {
         {
           title: "送祝福活动",
           image: WISH_IMG,
+          info: "这个弹幕不会重叠",
           items:
-            "在2020年教职工晚会和20周年校庆上的互动小活动\n收集祝福语并以弹幕同屏的形式展示\n实现了一套不会互相遮挡的弹幕控制器",
+            "在2020年教职工晚会和20周年校庆上的互动小活动\n收集祝福语并以弹幕同屏的形式展示\n实现了一套不会互相遮挡的高密度输出弹幕的控制器",
           news: [
             {
               title: "原来你一直牵念的人是我",
@@ -182,7 +168,9 @@ export default class HomePage extends Vue {
         {
           title: "微光管理员中心",
           image: Admin_IMG,
-          items: "解决了工作室一服务一密码的问题"
+          info: "解决了工作室一服务一密码的问题",
+          items:
+            "统一授权、统一控制用户权限、对工作室系统统一管理接入的一项服务，这项服务同时能让我们开放只有部分权限能力的账户给相关的老师"
         },
         {
           title: "DeMar大学生技术交流站",
@@ -281,6 +269,9 @@ a {
   z-index: 1024;
   height: 100vh;
   width: 40vw;
+  @media (max-width: $xs-sm-width) {
+    width: 80vw;
+  }
   z-index: 1;
   right: 0;
   top: 0;
@@ -304,6 +295,7 @@ a {
   }
 }
 .__body {
+  font-size: 17px;
   height: 100%;
   overflow: auto;
   .image {
@@ -342,8 +334,8 @@ a {
     }
   }
   .info {
-    font-size: 14px;
     font-style: italic;
+    margin-bottom: 10px;
   }
 }
 </style>
