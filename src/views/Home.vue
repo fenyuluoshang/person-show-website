@@ -299,7 +299,10 @@ a {
     transform: translateX(0);
   }
 
-  h3,
+  h3 {
+    color: #fff;
+  }
+
   h4,
   h5 {
     color: #ddd;
