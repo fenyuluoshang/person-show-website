@@ -22,6 +22,7 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 </body>
+<% if(NODE_ENV !== 'development'){ %>
 <script>
   var _hmt = _hmt || [];
   (function () {
@@ -45,5 +46,6 @@
 
   gtag('config', 'UA-169373755-1');
 </script>
+<% } %>
 
 </html>
