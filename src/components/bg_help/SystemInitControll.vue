@@ -9,13 +9,13 @@
 import EventBus from "@/util/EventBus";
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
-const INIT = "SERVER CONNECT FROM JAPAN; CDN CONNECT SUCCESS!";
-const BEFORE_LOAD = "系统初始化中...";
+const INIT = "SERVER CONNECT FROM JAPAN; CDN CONNECT SUCCESS! WELCOME!";
+const BEFORE_LOAD = "SYSTEM INIT:系统初始化中...";
 const MODEL_LOAD = "核心初始化中...";
 const MODEL_OK = "核心已上线";
 const MODEL_FAIL = "核心加载失败;skip...";
 const UI_OK = "UI界面初始化...";
-const ALL_OK = "ALL SYSTEM ONLINE! WELCOME！";
+const ALL_OK = "ALL SYSTEM ON!";
 @Component
 export default class TxtPanel extends Vue {
   info = true;
@@ -52,8 +52,8 @@ export default class TxtPanel extends Vue {
 
   loadUi() {
     this.text.push(UI_OK);
-    EventBus.$emit("ui_ok");
     setTimeout(() => {
+      EventBus.$emit("ui_ok");
       this.allOk();
     }, 1000);
   }
