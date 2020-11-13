@@ -14,7 +14,8 @@ module.exports = {
         externals: {
             'three': 'THREE', // 配置使用CDN
             vue: 'Vue',
-            'vue-router': 'VueRouter'
+            'vue-router': 'VueRouter',
+            'vue-class-component': 'VueClassComponent'
         }
     }
 }
