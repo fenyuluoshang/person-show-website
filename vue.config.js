@@ -22,7 +22,9 @@ module.exports = {
     name: '纷羽の实验室',
     themeColor: '#000',
     msTileColor: '#fff',
+    workboxPluginMode: 'InjectManifest',
     workboxOptions: {
+      swSrc: 'src/sw.js'
     }
   }
 }
