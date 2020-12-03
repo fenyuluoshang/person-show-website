@@ -1,21 +1,28 @@
 module.exports = {
-    productionSourceMap: false,
-    chainWebpack: config => {
-        config.module
-            .rule("model")
-            .test(/(\.glb|\.obj|\.mtl)$/)
-            .use("file-loader")
-            .loader("file-loader")
-            .options({
-                name: `model/[name].[hash:8].[ext]`
-            })
-    },
-    configureWebpack: {
-        externals: {
-            'three': 'THREE', // 配置使用CDN
-            vue: 'Vue',
-            'vue-router': 'VueRouter',
-            'vue-class-component': 'VueClassComponent'
-        }
+  productionSourceMap: false,
+  chainWebpack: config => {
+    const externals = {
+      'three': 'THREE', // 配置使用CDN
+      vue: 'Vue',
+      'vue-router': 'VueRouter',
+      'vue-class-component': 'VueClassComponent'
     }
+    config.externals(externals)
+    config.module
+      .rule("model")
+      .test(/(\.glb|\.obj|\.mtl)$/)
+      .use("file-loader")
+      .loader("file-loader")
+      .options({
+        name: `model/[name].[hash:8].[ext]`
+      })
+    // config.plugin('workbox')
+  },
+  pwa: {
+    name: '纷羽の实验室',
+    themeColor: '#000',
+    msTileColor: '#fff',
+    workboxOptions: {
+    }
+  }
 }
