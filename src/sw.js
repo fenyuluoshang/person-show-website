@@ -21,6 +21,19 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
+  /^https:\/\/cdn\.jsdelivr\.net/,
+  workbox.strategies.cacheFirst({
+    cacheName: 'cdn',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 60, // 最大的缓存数，超过之后则走 LRU 策略清除最老最少使用缓存
+        maxAgeSeconds: 7 * 24 * 60 * 60, // 这只最长缓存时间为 7 天
+      }),
+    ],
+  })
+)
+
+workbox.routing.registerRoute(
   /.*\.(?:png|jpg|jpeg|svg|gif)/g,
   workbox.strategies.cacheFirst({
     cacheName: 'image-cache',
