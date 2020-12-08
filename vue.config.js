@@ -24,7 +24,8 @@ module.exports = {
     msTileColor: '#fff',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: 'src/sw.js'
+      swSrc: 'src/sw.js',
+      importWorkboxFrom: 'local'
     }
   }
 }
