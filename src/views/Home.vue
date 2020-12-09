@@ -237,6 +237,10 @@ export default class HomePage extends Vue {
 
 <style lang="scss" scoped>
 @import "@/value.scss";
+.page {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   &:active {
@@ -263,6 +267,7 @@ a {
   height: 100vh;
   width: 100vw;
   z-index: 1000;
+  overflow: hidden;
 }
 
 .model_back {
