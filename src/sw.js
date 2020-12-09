@@ -1,7 +1,8 @@
-self.addEventListener('install', function(event) {
-  self.skipWaiting();
-});
+self.addEventListener('install', function (event) {
+  self.skipWaiting()
+})
 
+workbox.core.clientsClaim()
 console.log(self.__precacheManifest)
 workbox.core.setCacheNameDetails({ prefix: "person-show" })
 
