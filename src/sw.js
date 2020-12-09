@@ -1,6 +1,9 @@
-workbox.core.setCacheNameDetails({ prefix: "person-show" });
+self.addEventListener('install', function(event) {
+  self.skipWaiting();
+});
 
 console.log(self.__precacheManifest)
+workbox.core.setCacheNameDetails({ prefix: "person-show" })
 
 workbox.routing.registerRoute(
   /^https:\/\/fenyu-media\.oss-accelerate\.aliyuncs\.com/,
