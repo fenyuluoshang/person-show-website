@@ -14,11 +14,6 @@ if (process.env.NODE_ENV === "production") {
         "App is being served from cache by a service worker.\n" +
           "For more details, visit https://goo.gl/AFskqB"
       );
-      (window as any).registration = registration;
-      registration.showNotification("测试", {
-        icon: "/img/icons/android-chrome-192x192.png",
-        body: "测试消息",
-      });
     },
     registered() {
       console.log("Service worker has been registered.");

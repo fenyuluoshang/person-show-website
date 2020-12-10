@@ -3,7 +3,7 @@ self.addEventListener('install', function (event) {
 })
 
 workbox.core.clientsClaim()
-console.log(self.__precacheManifest)
+
 workbox.core.setCacheNameDetails({ prefix: "person-show" })
 
 workbox.routing.registerRoute(

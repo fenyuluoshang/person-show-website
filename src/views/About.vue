@@ -8,7 +8,7 @@
           按钮动画出自于大魔法师
           <a target="_blank" href="https://flag.moe">哞菇</a> 大佬的网站
         </p>
-        <p></p>
+        <p>感谢各位大佬和各位朋友来看我的实验室</p>
       </div>
     </div>
   </div>

@@ -203,6 +203,10 @@ export default class HomePage extends Vue {
           title: "shimmer-joi",
           items: "基于 @hapi/joi 更好的 typescript 类型引导",
           github: "https://github.com/NeuShimmer/joi"
+        },
+        {
+          title: "shimmer-club",
+          items: "目前正在规划中的超级社团系统"
         }
       ]
     }
