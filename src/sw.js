@@ -33,4 +33,6 @@ workbox.routing.registerRoute(
   })
 )
 
+workbox.routing.registerNavigationRoute('/index.html')
+
 workbox.precaching.precacheAndRoute([].concat(self.__precacheManifest))
