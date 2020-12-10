@@ -33,6 +33,8 @@ workbox.routing.registerRoute(
   })
 )
 
-workbox.routing.registerNavigationRoute('/index.html')
+workbox.routing.registerNavigationRoute('/index.html', {
+  blacklist: [/\/img/, /\..*$/]
+})
 
 workbox.precaching.precacheAndRoute([].concat(self.__precacheManifest))
