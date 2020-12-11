@@ -4,7 +4,7 @@
       <h2>404 NOT FOUND</h2>
       <p class="small">
         <router-link to="/about">首页</router-link>&nbsp;
-        <template v-if="window.history.length > 1">
+        <template v-if="history > 1">
           <a href="javascript:void(0);" @click="$router.go(-1)">返回上一页</a
           >&nbsp;
         </template>
@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  name: "NotFound"
+  name: "NotFound",
+  computed: {
+    history() {
+      return window.history.length;
+    }
+  }
 };
 </script>
 
