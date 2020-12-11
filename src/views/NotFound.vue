@@ -12,7 +12,7 @@
         <router-link to="/about">致敬</router-link>
       </p>
       <div>
-        <p>您正在访问的资源或许不存在，请尝试修正</p>
+        <p>您正在访问的资源或许不存在，请您查正后再试</p>
       </div>
     </div>
   </div>
