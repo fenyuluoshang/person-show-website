@@ -42,12 +42,12 @@ export default class TxtPanel extends Vue {
     this.text.push(INIT);
     setTimeout(() => {
       this.text.push(BEFORE_LOAD);
-    }, 1000);
+    }, 500);
     setTimeout(() => {
       this.text.push(MODEL_LOAD);
       this.init = true;
       if (this.initAfter) this.initAfter();
-    }, 2000);
+    }, 1000);
   }
 
   loadUi() {
@@ -55,7 +55,7 @@ export default class TxtPanel extends Vue {
     setTimeout(() => {
       EventBus.$emit("ui_ok");
       this.allOk();
-    }, 1000);
+    }, 500);
   }
 
   allOk() {

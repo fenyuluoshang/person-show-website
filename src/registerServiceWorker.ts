@@ -24,8 +24,17 @@ if (process.env.NODE_ENV === "production") {
     updatefound() {
       console.log("New content is downloading.");
     },
-    updated() {
+    updated(registration) {
       console.log("New content is available; please refresh.");
+      registration
+        .showNotification("检测到更新", {
+          icon: "/img/icons/android-chrome-512x512.png",
+          body: "检测到更新，请刷新页面。",
+        })
+        .then(() => {})
+        .catch((e) => {
+          console.error(e);
+        });
     },
     offline() {
       console.log(
