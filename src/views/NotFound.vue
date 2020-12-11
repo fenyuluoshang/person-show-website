@@ -4,10 +4,8 @@
       <h2>404 NOT FOUND</h2>
       <p class="small">
         <router-link to="/about">首页</router-link>&nbsp;
-        <template v-if="history > 1">
-          <a href="javascript:void(0);" @click="$router.go(-1)">返回上一页</a
-          >&nbsp;
-        </template>
+        <a v-if="history > 1" href="javascript:void(0);" @click="$router.go(-1)"
+          >返回上一页</a>&nbsp;
         <a href="https://fenyu.club">主页</a>&nbsp;
         <a href="https://blog.fenyu.club">我的博客</a>&nbsp;
         <a href="https://github.com/fenyuluoshang">GitHub</a>&nbsp;
