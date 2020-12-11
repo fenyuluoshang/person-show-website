@@ -2,7 +2,7 @@
 
 import { register } from "register-service-worker";
 
-if ("Notification" in Window) {
+if ("Notification" in window) {
   if (Notification.permission === "default") {
     Notification.requestPermission();
   }
