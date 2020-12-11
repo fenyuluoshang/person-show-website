@@ -3,7 +3,7 @@
     <div class="page-box">
       <h2>404 NOT FOUND</h2>
       <p class="small">
-        <router-link to="/about">首页</router-link>&nbsp;
+        <router-link to="/">首页</router-link>&nbsp;
         <a v-if="history > 1" href="javascript:void(0);" @click="$router.go(-1)"
           >返回上一页</a>&nbsp;
         <a href="https://fenyu.club">主页</a>&nbsp;
