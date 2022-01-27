@@ -7902,10 +7902,10 @@ three-obj-mtl-loader@^1.0.3:
   resolved "https://registry.npm.taobao.org/three-obj-mtl-loader/download/three-obj-mtl-loader-1.0.3.tgz#2901efd5b77cce29b61733c63f196432ee653667"
   integrity sha1-KQHv1bd8zim2FzPGPxlkMu5lNmc=
 
-three@^0.117.1:
-  version "0.117.1"
-  resolved "https://registry.npm.taobao.org/three/download/three-0.117.1.tgz#a49bcb1a6ddea2f250003e42585dc3e78e92b9d3"
-  integrity sha1-pJvLGm3eovJQAD5CWF3D546SudM=
+three@^0.137.0:
+  version "0.137.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.137.0.tgz#0ebd6ba66637a332c31f234bcdd35aeec071a6e3"
+  integrity sha512-rzSDhia6cU35UCy6y+zEEws6vSgytfHqFMSaBvUcySgzwvDO6vETyswtSNi/+aVqJw8WLMwyT1mlQQ1T/dxxOA==
 
 through2@^2.0.0:
   version "2.0.5"
